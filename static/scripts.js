@@ -116,3 +116,28 @@ function confirm() {
 function decline() {
     document.getElementById("dialog").style.display = 'none';
 }
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#avatar')
+                .attr('src', e.target.result);
+                // .width(150)
+                // .height(200);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+function setProfile() {
+    document.getElementById("profile").style.display = "";
+}
+function submitProfile() {
+    var name = document.getElementById("name_input").value;
+    var id = document.getElementById("id_input").value;
+    document.getElementById("name").innerHTML = name;
+    document.getElementById("id").innerHTML = id;
+    document.getElementById("profile").style.display = 'none';
+}
+function declineProfile() {
+    document.getElementById("profile").style.display = 'none';
+}
