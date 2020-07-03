@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+        <link rel="icon" href="./static/favicon.ico">
+        <title>学生进出校管理系统</title>
+        <link href="./static/elements.css" rel="stylesheet">
+        <link href="./static/icons.css" rel="stylesheet">
+        <script src="./static/scripts.js"></script>
+    </head>
+    <body data-gr-c-s-loaded="true" onload="startClock()" onunload="stopClock()">
+        <noscript>
+            <strong>We're sorry but ui doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+        <div id="app">
+            <div class="wrapper">
+                <div style="position: relative;">
+                    <img src="./static/xyk.56d8a335.png" style="width: 100%; height: 100%;">
+                    <div class="dept">电子信息与电气工程学院</div>
+                </div>
+                <div class="content">
+                    <div class="user">
+                        <img src="static/avatar.jpg">
+                        <div class="user-info">
+                            <div>XXX</div>
+                            <div class="user-no">516030910888</div>
+                        </div>
+                    </div>
+                    <div class="audit">
+                        <!---->
+                        <span>
+                            <script type="text/javascript">
+                                var date = new Date();
+                                document.write((date.getMonth() + 1) + "月" + date.getDate() + "号");
+                            </script>
+                        </span>
+                        <!---->
+                        闵行校区
+                        <div class="audit-status success">审核通过</div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; padding-top: 1.5rem;">
+                    <div class="circle-btn">
+                        <div id="crust" class="crust default-bk-air" onclick="stateTrans()">
+                            <div id="mantle" class="mantle default-bk-gradient">
+                                <div class="spacing">
+                                    <div id="core" class="core default-bk">
+                                        <div style="font-weight: 300;" id="state">点击出校</div>
+                                        <div id="state_en"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bubble" class="bubble success" style="display: none;">
+                        <i class="el-icon-warning-outline"></i>
+                        <span id="state_note">此状态保持10分钟，请尽快出校</span>
+                    </div>
+                    <div class="time">
+                        <div id="show"></div>
+                    </div>
+                    
+                </div>
+                <div class="el-dialog__wrapper" style="display: none;" id="dialog">
+                    <div role="dialog" aria-modal="true" aria-label="提示" class="el-dialog confirm-dialog" style="margin-top: 15vh; width: 90%;">
+                        <div class="el-dialog__header">
+                            <span class="el-dialog__title">提示</span>
+                            <button type="button" aria-label="Close" class="el-dialog__headerbtn" onclick="decline()">
+                                <i class="el-dialog__close el-icon el-icon-close"></i>
+                            </button>
+                        </div>
+                        <div style="font-size: .75rem;">
+                            <i class="el-icon-warning"></i>
+                            <span id="dialog_txt">"需在10分钟内出校，确定出校吗？"</span>
+                        </div>
+                        <div class="el-dialog__footer">
+                            <div class="dialog-footer">
+                                <button type="button" class="el-button el-button--default el-button--medium" onclick="decline()">
+                                    <!---->
+                                    <!---->
+                                    <span>取 消</span>
+                                </button>
+                                <button type="button" class="el-button el-button--primary el-button--medium" onclick="confirm()">
+                                    <!---->
+                                    <!---->
+                                    <span>确 定</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
